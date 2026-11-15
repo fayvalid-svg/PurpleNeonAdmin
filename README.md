@@ -8,3 +8,7 @@ This app does not connect to Rec Room, modify accounts or avatars, unlock clothi
 
 ## Build
 A GitHub Actions workflow builds a debug APK and uploads it as a downloadable workflow artifact.
+
+
+## Build status
+The GitHub Actions workflow builds a debug APK and publishes it as the `PurpleNeonAdmin-debug-apk` artifact.
