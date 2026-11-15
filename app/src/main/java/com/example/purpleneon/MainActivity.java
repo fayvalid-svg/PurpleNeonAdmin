@@ -47,6 +47,19 @@ public class MainActivity extends Activity {
         diagnostics.setOnClickListener(v -> new android.app.AlertDialog.Builder(this).setTitle("Connection health")
             .setMessage("Device network: Check Android network settings\nGame connection: Not connected to Rec Room\nModeration bypass: Not supported")
             .setPositiveButton("OK",null).show());
+        addCard("ANTI-KICK","Display-only placeholder • Does not prevent kicks or bypass game moderation.");
+        Switch antiKick = new Switch(this);
+        antiKick.setText("Anti-Kick (visual toggle only)");
+        antiKick.setTextColor(Color.WHITE);
+        antiKick.setTextSize(15);
+        antiKick.setPadding(16,12,16,12);
+        antiKick.setOnCheckedChangeListener((buttonView, isChecked) ->
+            new android.app.AlertDialog.Builder(this)
+                .setTitle("Anti-Kick — display only")
+                .setMessage("This switch only changes the menu display. It does not connect to Rec Room, prevent kicks, or bypass moderation.")
+                .setPositiveButton("OK", null)
+                .show());
+        root.addView(antiKick);
         addCard("PLAYER / VISUAL SETTINGS","Personal interface preferences");
         addSwitch("Show local visual indicators",true); addSwitch("Enable custom crosshair preview",false); addSwitch("Enable menu glow",true);
         addCard("CLOTHING CUSTOMIZER","Preview outfit combinations; no game items are unlocked or changed.");
